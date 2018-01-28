@@ -36,9 +36,9 @@ with open (emgPath) as csvfile:
     maximum = 0
     for row in readCSV:
         for i in range(1, 9):
-            if int(row[i]) > max:
+            if int(row[i]) > maximum:
                 maximum = int(row[i])
 
-print(max)
+print(maximum)
 
 os.remove(emgPath)
