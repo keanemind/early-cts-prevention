@@ -22,12 +22,6 @@ for filename in os.listdir("."):
 
         os.remove(filename)
 
-
-with open("emg-1517131803.csv") as csvfile:
-    readCSV = csv.reader(csvfile, delimiter=",")
-    next(readCSV)
-    maximum = 0
-
 def find(name, path):
     for root, dirs, files in os.walk(path):
         for file in files:
