@@ -14,15 +14,15 @@ for filename in os.listdir("."):
 
         os.remove(filename)
 
-def find(name, path):
-    for root, dirs, files in os.walk(path):
-        for file in files:
-            if name in file[0:3]:
-                return os.path.join(root, file)
+found = False
+for filename in os.listdir("."):
+    if fnmatch.fnmatch(filename, "emg-*.csv"):
+        found = True
+        break
 
-emgPath = find("emg", "C:/Users/keane/Documents/Programming/Python Programs/early-cts-prevention")
+assert found, "emg data not found"
 
-with open (emgPath) as csvfile:
+with open (filename) as csvfile:
     readCSV = csv.reader(csvfile, delimiter=",")
     next(readCSV)
     maximum = 0
@@ -33,4 +33,4 @@ with open (emgPath) as csvfile:
 
 print(maximum)
 
-os.remove(emgPath)
+os.remove(filename)
