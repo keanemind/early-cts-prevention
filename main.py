@@ -63,9 +63,9 @@ with open("results.csv", "w") as csvfile:
     for row in data:
         writer.writerow(row)
 
-#print("Displaying plot...")
+print("Displaying plot...")
 pyplot.plot([row[0] for row in data], [row[1] for row in data], "ro-")
-#pyplot.show()
+pyplot.show()
 pyplot.savefig("result.png")
 
 if len(data) > 30:
@@ -94,5 +94,5 @@ if len(data) > 30:
         input("Yes / No [Y]: ")
 
 healthy = {"healthy": True}
-with open("data.json", "w+") as outfile:
-    json.dump(healthy, outfile)
+with open("data.js", "w+") as outfile:
+    outfile.write("var healthy = \"true\";")

@@ -1,6 +1,8 @@
 <html>
     <head>
         <title>EMG Report</title>
+      
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans" rel="stylesheet">
         <style>
             body {
@@ -25,9 +27,33 @@
         <h1 style='text-align: center'>Risk status:</h1>
         <div id='test'>
           	<p>Your recent EMG readings have significantly weaker than they usually are. This may be an early sign of carpal tunnel syndrome. To best avoid worsening any symptoms, you should begin regularly stretching your wrists and hands.</p>  
+            <script>
+               // var intervalID = setInterval(function(){alert("Time to stretch!");}, 5000);
+            </script>
         </div>
+
+        <script type="text/javascript" src="data.js">
+        </script>
+        
         
         <script>
+          //$.getJSON("data.json", function(json) {
+          //    console.log(json); // this will show the info it in firebug console
+          //});
+          //var myData = JSON.parse(json);
+          //alert(myData.healthy.toString());
+          //console.log(myData);
+          
+          
+          /*
+            $.getJSON("data.json", function(json) {
+              console.log(json); // this will show the info it in firebug console
+          });
+
+          fetch("data.json")
+            .then(response => response.json())
+            .then(json => console.log(json));
+  			*/
           document.getElementById("test").style.display = "none";
         </script>
   	</body>
