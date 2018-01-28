@@ -3,6 +3,7 @@
 import os
 import csv
 import fnmatch
+import json
 import matplotlib
 #matplotlib.use("agg")
 from matplotlib import pyplot
@@ -92,3 +93,6 @@ if len(data) > 30:
               "Would you like to set up repeating reminders to stretch?")
         input("Yes / No [Y]: ")
 
+healthy = True
+with open("data.json", "w+") as outfile:
+    json.dump(healthy, outfile)
