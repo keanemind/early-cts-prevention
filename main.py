@@ -12,7 +12,7 @@ print("Connect the Myo armband and sync. \n"
       "3. Repeat 4 more times."
       "4. Close out of the terminal window.")
 input()
-subprocess.run("myo-data-capture.cpp")
+subprocess.run("Myo Data Capture.exe")
 
 for filename in os.listdir("."):
     if (fnmatch.fnmatch(filename, "accelerometer-*.csv") or
