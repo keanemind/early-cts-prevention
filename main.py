@@ -3,7 +3,12 @@
 import subprocess
 import csv
 
-print("Connect the Myo armband and sync. When you are ready, press any key.")
+print("Connect the Myo armband and sync. \n"
+      "Instructions:"
+      "1. Press enter to start data capture."
+      "2. Clench fist tightly for 2 seconds, then release."
+      "3. Repeat 4 more times."
+      "4. Close out of the terminal window.")
 input()
 subprocess.run("myo-data-capture.cpp")
 
