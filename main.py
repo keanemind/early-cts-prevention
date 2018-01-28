@@ -63,10 +63,10 @@ with open("results.csv", "w") as csvfile:
     for row in data:
         writer.writerow(row)
 
-print("Displaying plot...")
+#print("Displaying plot...")
 pyplot.plot([row[0] for row in data], [row[1] for row in data], "ro-")
-pyplot.show()
-#pyplot.savefig("result.png")
+#pyplot.show()
+pyplot.savefig("result.png")
 
 if len(data) > 30:
     sum = 0
@@ -93,6 +93,6 @@ if len(data) > 30:
               "Would you like to set up repeating reminders to stretch?")
         input("Yes / No [Y]: ")
 
-healthy = True
+healthy = {"healthy": True}
 with open("data.json", "w+") as outfile:
     json.dump(healthy, outfile)
