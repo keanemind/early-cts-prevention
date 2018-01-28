@@ -1,18 +1,10 @@
 """Collect, analyze, and display EMG data."""
 
 import os
+import sys
 import subprocess
 import csv
 import fnmatch
-
-print("Connect the Myo armband and sync. \n"
-      "Instructions:"
-      "1. Press enter to start data capture."
-      "2. Clench fist tightly for 2 seconds, then release."
-      "3. Repeat 4 more times."
-      "4. Close out of the terminal window.")
-input()
-subprocess.run("Myo Data Capture.exe")
 
 for filename in os.listdir("."):
     if (fnmatch.fnmatch(filename, "accelerometer-*.csv") or
@@ -28,7 +20,7 @@ def find(name, path):
             if name in file[0:3]:
                 return os.path.join(root, file)
 
-emgPath = find("emg", "/Users/Bala/Desktop/dataset")
+emgPath = find("emg", "C:/Users/keane/Documents/Programming/Python Programs/early-cts-prevention")
 
 with open (emgPath) as csvfile:
     readCSV = csv.reader(csvfile, delimiter=",")
