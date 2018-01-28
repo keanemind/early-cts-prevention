@@ -28,10 +28,23 @@ with open("emg-1517131803.csv") as csvfile:
     next(readCSV)
     maximum = 0
 
+def find(name, path):
+    for root, dirs, files in os.walk(path):
+        for file in files:
+            if name in file[0:3]:
+                return os.path.join(root, file)
+
+emgPath = find("emg", "/Users/Bala/Desktop/dataset")
+
+with open (emgPath) as csvfile:
+    readCSV = csv.reader(csvfile, delimiter=",")
+    next(readCSV)
+    maximum = 0
     for row in readCSV:
-        print(type(row))
         for i in range(1, 9):
-            if int(row[i]) > maximum:
+            if int(row[i]) > max:
                 maximum = int(row[i])
 
 print(max)
+
+os.remove(emgPath)
